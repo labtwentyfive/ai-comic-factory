@@ -1,13 +1,10 @@
 import { useStore } from "@/app/store"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { About } from "../about"
 import { startTransition, useState } from "react"
 import { upscaleImage } from "@/app/engine/render"
 import { sleep } from "@/lib/sleep"
-import { AIClipFactory } from "../ai-clip-factory"
 import { Share } from "../share"
-import { SettingsDialog } from "../settings-dialog"
 
 export function BottomBar() {
   const download = useStore(state => state.download)
@@ -78,8 +75,6 @@ export function BottomBar() {
         `space-x-3`,
         `scale-[0.9]`
       )}>
-        <About />
-        <AIClipFactory />
       </div>
       <div className={cn(
       `flex flex-row`,
@@ -89,7 +84,6 @@ export function BottomBar() {
       `space-x-3`,
       `scale-[0.9]`
     )}>
-      <SettingsDialog />
       <Button
         onClick={handleUpscale}
         disabled={!prompt?.length || remainingImages > 0 || isUpscaling || !Object.values(upscaleQueue).length}

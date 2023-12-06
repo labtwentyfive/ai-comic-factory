@@ -437,7 +437,7 @@ export const allLayoutsNbPanels = {
 
 export type LayoutName = keyof typeof allLayouts 
 
-export const defaultLayout: LayoutName = "Layout1"
+export const defaultLayout: LayoutName = "Layout3"
 
 export type LayoutCategory = "square" | "fluid"
 
